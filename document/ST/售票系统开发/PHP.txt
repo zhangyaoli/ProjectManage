@@ -1,0 +1,104 @@
+输出echo " ".$a."<br>" <br>是回车<hr>是输出横线
+PHP数据类型 标准型boolean integer float string 复合型array object
+声明自定义变量 $ 变量名第一个字母为下划线或者大小写。$a=TRUE,
+$b=array(1,2,3,4);$c=array("A"=>1,"B"=>2);
+字符串用单引号定义不支持转义字符，双引号支持。
+1==="1"为假 什么都不输出  3个等于完全相等，类型也要相同 1=="1"为真 输出1
+print_r($array)输出数组中的值 count($array)统计数组里值的个数 is_array($array)判断是否是数组 $array=explode(char mark,$a)将数据a用mark拆分成数组
+foreach($arr as $key=>$value){}遍历数组key被赋予数组下标，value则是对应的值
+unset($var)删除一个变量
+function_exists(函数名)判断函数是否存在
+mysql_connect("主机","用户名","密码")开启MySQL链接
+mysql_select_db("打开数据库",连接标识符) 打开一个数据库，连接标识符为connect返回值的赋值对象
+$result=@mysql_connect("localhost","root","111") or die("数据库连接失败");
+mysql_query(sql语句，连接标识符)返回值result是boolean值,SELECT语句返回的是符合条件的数据
+用mysql_fetch_row/array可以接收内容.(如下)
+两种查询函数mysql_fetch_row(result) 返回一个数组
+mysql_fetch_array(result)返回数组 可以用数据库中的名称作为下标
+@隐藏错误 or die 条件显示 mysql_query("set names 'GBK'");
+mysql_num_rows(sql)返回的行数 mysql_insert_id返回最后一次使用insert的id
+mysql_tablename()  mysql_error()返回错误信息 mysql_close()
+include("a.php");引用其他php文件
+include_once()可以防止重复载入同一个文件
+接收参数$_get['value'] $_POST['value']
+提交表单javascript验证 PHP100-12中
+setcookie("cookie生成的名称","生成cookie的值","cookie保存的时间","cookie保存目录","起效域名","https发送"
+setcookie("TEST","value",3600,"/dir",".domains.com",true);
+<script>location.href='.php'</script>刷新页面 rand(int min,int max) dechex(int)把10进制转换为16进制
+$string=iconv("gbk","utf-8","转换的内容")转换模式
+
+<?php
+$guanqi = "中国.日本,日本,中国.韩国,日本,中国 韩国,中国";
+$arr = preg_split("/[\., ]/",$guanqi);
+var_dump($arr);
+?>
+parse_url()将url解析成固定键值的数组
+$ua=parse_url("http://username:password@hostname/path?arg=value#anchor");
+print_r($ua);
+结果：
+Array
+(
+    [scheme] => http
+    [host] => hostname
+    [user] => username
+    [pass] => password
+    [path] => /path
+    [query] => arg=value
+    [fragment] => anchor
+)
+
+$_SERVER["REQUEST_URI"] 获得除域名外后面的完整地址
+$_SERVER['PHP_SELF']获得以服务器文档根目录为起点的脚本位置。
+$_SERVER["QUERY_STRING"]获取查询语句，实例中可知，获取的是?后面的值
+$_SERVER["REQUEST_URI"] 获取http://www.baidu.com后面的值，包括/
+$_SERVER["SCRIPT_NAME"] 获取当前脚本的路径，如：index.php
+$_SERVER["PHP_SELF"] 当前正在执行脚本的文件名
+form表单enctype属性 ="multipart/form-data"可以用于上传文件，否则默认的不能用于上传
+$_FILE['myfile']['name']原文件名['type']文件的MIME类型 如IMG['size']上传文件大小，字节['tmp_name']存储的临时文件名，系统默认['error']文件上传的错误代码，返回值：0文件上传成功，1超过php.ini设定的文件大小，2超过MAX_FILE_SIZE值，3只有部分上传，4没有文件上传，5上传大小为0
+move_uploaded_file(临时文件，目标位置，重命名文件名)，移动文件到目标位置
+is_uploaded_file(MIME)判断上传MIME类型的文件函数
+PHP 文件操作函数
+fopen(路径文件名，打开方式)打开文件函数$filea=foepn("tmp.htm","r")R只读W写A读写
+fread(打开的文件，结束位置)结束位置是字节单位，如200字节处 读取文件内容
+$content=($filea,filesize("tmp.tml"));
+filesize(路径文件名)读取文件大小
+fwrite(路径文件名，写入的内容)写入文件内容 
+fclose(路径文件名)关闭打开的文件 
+file_get_contents('tm.htm',r)等于fopen之后fread
+fseek(句柄，位移数，位移位置SEEK_SET起点，SEEK_CUR当前位置，SEEK_END末尾)
+rewind(handle)把指针移动到文件起点   ftell(handle)返回当前字节位置
+删除：unlink(路径,文件名)删除文件函数   ,rmdir(路径,目录名)删除目录函数 
+类：
+final修饰的类不可被继承和重写
+this指向实例化的类，self指向的是类本身，用于指向静态变量和方法。
+__autoload($name){include("$name.php");},写在类外 可自动载入类
+$this，在类内部访问类的属性或方法，如$this->name
+__construct()类的构造函数,不一定用与类同名的函数  
+__destruct() 析构函数,可用来记录日志
+__get($private)类中加入__get()外部程序可以访问其参数中的私有属性(但不允许更改)，并在访问时做更改，用于保护私有数据
+__set($private,$value) 可以改变私有属性的值
+__tostring()系统定义的类配置函数，通过该函数直接打印对象句柄： $p=new a(); echo $p
+__call($name,$value)对象方法错误异常$name为错误的方法,$value为错误的名称，将值传入数组,输出要用print_r($value)
+__clone() 克隆对象 $b=clone$a; 
+关键字final 锁的功能 final类或者函数不能被继承和重载
+self 可访问没有实例化的类的内容，比如静态成员，常量 类内部访问用self::静态成员(或类名称::静态成员),静态函数不能出现非静态内容，使用self访问静态内容
+static 静态属性 方法
+const 定义常量，没有$ 如const NAME;
+接口：interface exam{}类中全委抽象方法，抽象方法不用加abstract 方法只能为public 成员属性只能为常量
+接口的引用 (abstract)class mypc implenments demo,demo2{}
+先继承后接口
+class A ;$string instance of A 判断对象是否来自指定的类
+
+
+strlen 获取字符串长度 strcmp比较 strcasecmp不区分大小写strnatcmp按自然顺序比较 strncmp(str1,str2,int len) len表示比较前len个字符
+strstr(str1,str2) str1为从哪个字符串中搜索 str2指定搜索对象，返回瘦子出现位置以及之后的所有内容。
+substr_count(str1,str2)参数和strstr一样，返回出现的次数
+str_replace(被替换的值，替换的值，被替换的内容，替换次数（可选）); str_replace(A,B,str)将str中A的值换成B
+trim(源字符串，去除的内容） 去除两边的空白字符或指定内容 rtrim（），ltrim（）
+explode(分隔符，要分割的字符串，数组包含最大个数（int）） implode（分隔符，数组）将数组合并成一个字符串
+stripslashes(string str)可去除str中的\。
+htmlspecialchars(所要格式化对象，定义单双引号，编码） 将HTML格式化，防止在输出html时被浏览器执行
+htmlentities(指定转换的字符串，转换方式，字符集)将字符串转换为HTML字符
+）索引数组（由数字索引）关联数组（起码下标一个是字符串索引）
+setcookie(),session_start(),header("location:xxxxx")之前不能有输出 否则会出错
+删除cookier只需将时间改为以前的时间即可（time()-1）删除session可以用session_destory()

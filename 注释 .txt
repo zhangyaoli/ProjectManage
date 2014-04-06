@@ -1,0 +1,20 @@
+login登陆页面 loginCheck用于检测是否登陆（使用cookie['name']  conn连接数据库 exit为删除cookie页面
+register为注册页面，checkUserName为检测用户名是否相同的页面，配合ajax使用
+index为登陆后首页
+conn数据库连接文件，早知道应该写几个数据库操作函数。。。。靠 
+setpeople为管理公司职员（创建修改删除）页面，modifyStaff,deleteStaff,addStaff为具体实现功能的页面
+document是文档管理的主页，documentShow显示权限内可看见的文档，documentSearch提供搜索功能,showdir显示每个文件夹中的内容（附带下载）,download则是具体的下载页面
+documentFunction是所有文档操作所需要的函数页面，其中showfile和showfolder函数带有nopower版本，用于进入项目文件夹后，能进入项目文件夹，则该文件夹内不需要权限，使用NOPOWR版本
+documentSearch中select中本来想有个其他。。不知道怎么在mysql中实现搜索 。。删了
+projectCreate创建项目,并利用createfolder自动创建一个项目文件夹
+projectUpdate项目更新
+项目完成度由模块贡献度之和组成，每次模块修改为完成后后会更新项目完成度。
+！！文档管理中对文件夹的属性修改和删除,创建等到项目模块完成在写,删除员工处目前有错误（选否也删除）
+
+用户权限 0-1-2
+MYSQL表结构：user表 登陆用户表，只对于公司进行注册，用户名采用xx@公司名的形式存储，admin@公司名是管理员
+            folder表示所有公司建立的文件夹表，一个公司对应一个名字为 公司名 的文件夹，所有项目文件夹在公司文件夹的下一级，名字是项目名，fcnamepro字段是显示
+文件夹属于哪个公司的哪个项目，便于统计登录用户可查看的文件夹，并且可以通过该字段与document表关联
+            document表 存放所有上传的文件，dtype是文件被浏览器解析出的类型，通过cnamepro可以找到所属文件夹（但是显示文件夹中文件使用scandir函数，不用通过表查找）
+            project表示项目表，参与人用 "用户名,用户名 "组成一个字符串，可用","分开。完成度100既完成，不需要flag字段标记。
+            thread表示 项目中的各个模块线程，tname是 线程名@cnamepro，说明可以通过这个名字与project表关联,线程优先度用来绘制项目流程图的
