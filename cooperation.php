@@ -125,9 +125,6 @@ function countProject($username, $sql)
     <script type="text/javascript" src="../js/xiangmu.js"></script>
 </head>
 </html>
-
-
-
 <body>
 <table class="user_table">
     <tr class="user_head">
