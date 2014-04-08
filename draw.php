@@ -84,7 +84,7 @@ function showSpeedImage($name,$company)
         $numi=$i+1;
         $stage="阶段".$numi;
         $stage=level($numi);
-        $str =$stage;
+        $str= $stage;
         imagettftext($im,11,0,$x+50,15,$black,"simfang.ttf",$str);
         if($arr['tflag']==0)
         {
@@ -122,7 +122,6 @@ function showSpeedImage($name,$company)
     imagefilledrectangle($im,150,50*($max+2)-30,150+300*$arr2['pspeed']/100,50*($max+2)-10,$grey);
     imagegif($im,$name.".jpg");
     return "<img src='".$name.".jpg'>";
-
 }
 
 ?>

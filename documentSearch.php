@@ -60,7 +60,7 @@ if(isset($_COOKIE['name'])){
     $FILE_ARRAY=array();//从可查看文件夹中获取所有可查看的文件放入数组中
     foreach($OUTPUT_ARRAY as $value)
     {
-        $tmparr1=scandir($value);
+        $tmparr1=scandir(iconv('utf-8','gb2312',$value));
         for($i=0;$i<count($tmparr1);$i++)
         {
             array_push($FILE_ARRAY,$tmparr1[$i]);
@@ -108,7 +108,7 @@ if(isset($_COOKIE['name'])){
         "<select name='selectPeople' size='1'>";
     $sql3="select * from `user` where `cname`='".$arrUser['cname']."';";
     echo "<option value=''>所有人</option> <br>";
-    $result3=mysql_query($sql3,$mysql);
+    $result3=mysql_query($sql3);
     while($tmparr3=mysql_fetch_array($result3))
     {
         echo "<option value='".$tmparr3['username']."'>".$tmparr3['username']."</option> <br>";

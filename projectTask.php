@@ -108,6 +108,14 @@ $arr=mysql_fetch_array($result);//获得该项目信息
             </td>
         </tr>
         <tr>
+            <td>&nbsp;</td>
+            <td>所属模块:</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <input type="submit" name="submitTask" id="submitTask" value="发布" onclick="selectAll1()"/>
             </td>

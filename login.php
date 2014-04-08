@@ -6,8 +6,15 @@ if(isset($_POST['indexSubmit'])){
     $sql="select * from `user` where `username`='".$username."'and `userpw`='".$userpw."';";
     $result=mysql_query($sql,$mysql);
     $arr=mysql_fetch_array($result);
+
+
     if($arr)
     {
+        if($arr['power']==0){
+            setcookie('projectManager',1);
+        }else{
+            setcookie('projectManager',2);
+        }
         setcookie("name",$username);
         header("location:project.php");
     }else

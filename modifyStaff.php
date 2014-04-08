@@ -41,7 +41,9 @@ if(isset($_POST['mySubmit']))
 
 ?>
 <html>
-<head><title></title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title></title>
 </head>
 <form  name="myForm" method="POST">
     用户名:<input type="text" name="textname" value="<?php echo $arr['username']?>"><br>

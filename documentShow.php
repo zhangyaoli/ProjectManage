@@ -88,7 +88,7 @@ $result=mysql_query($sql2,$mysql);
     {  	  //   小于4指有进入项目文件夹的权限,指有权查看所有项目的管理人员 strstr cname那个条件指属于本公司的文件夹,fvp!=''表示这是一个项目文件夹
         if(strstr($arrFolder['pstaff'],$username)!=false&&(strstr($arrFolder['cname'],$usercompany)!=""))
         {
-            $address="./document/".$usercompany."/".$arrFolder['pname'];
+            $address=dirname(__FILE__).DIRECTORY_SEPARATOR.'document'.DIRECTORY_SEPARATOR.iconv('utf-8','gb2312',$usercompany).DIRECTORY_SEPARATOR.iconv('utf-8','gb2312',$arrFolder['pname']);
             echo "<tr id='tr1'>".
                 //"<th colspan='7'>项目".$arrFolder['pname']."</th>".
                 "<td><img src='css/pic/tabletree-arrow.gif' id=img onClick=expand(this) align='left' alt='点击展开'/></td>".

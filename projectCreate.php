@@ -51,9 +51,9 @@ function getCompany($username,$mysql){
 function createFolder($path,$name,$pow,$cnamepro,$visitPeople)
 {
     global $mysql;
-    $path1=$path."/".$name;
+    $path1=iconv('utf-8','gb2312',$path)."/".iconv('utf-8','gb2312',$name);
     mkdir($path1);
-    $sql="insert into `folder`(`fname`,`faddress`,`fpow`,`fvp`,`fcnamepro`) values('".$name."','".$path1."','".$pow."','".$visitPeople.
+    $sql="insert into `folder`(`fname`,`faddress`,`fpow`,`fvp`,`fcnamepro`) values('".$name."','".iconv('gb2312','utf-8',$path1)."','".$pow."','".$visitPeople.
         "','".$cnamepro."');";
     mysql_query($sql,$mysql);
 }

@@ -20,7 +20,8 @@ function getCompany($username,$mysql){
     }
     return $company;
 }
-$dir=$_SERVER['QUERY_STRING'];
+$dir=urldecode($_SERVER['QUERY_STRING']);
+
 $arr=explode("=",$dir);
 $dir=@$arr[1];
 $arr=explode("/",$dir);
@@ -28,7 +29,7 @@ $name=@$arr[count($arr)-1];
 $project=@$arr[2];
 $sql="delete from `document` where `daddress`='".$dir."';";
 mysql_query($sql,$mysql);
-@unlink($dir);
+@unlink(iconv('utf-8','gb2312',$dir));
 $content="删除了项目 ".$project." 内部的文件 ".$name;
 $sql="INSERT INTO `plog`(`project`, ` content`, `time`, `people`) VALUES('".getCompany($_COOKIE['name'],$mysql)."@".$_COOKIE['project']."','".$content."',NOW(),'".$_COOKIE['name']."');";
 mysql_query($sql,$mysql);

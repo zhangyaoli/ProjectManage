@@ -70,11 +70,10 @@
     include("documentFunction.php");
     //include("projectTop.php");
     $sql="select * from `project` where `pname`='".$_COOKIE['project']."';";
-    $result=mysql_query($sql,$mysql);
+    $result=mysql_query($sql);
     $arr=mysql_fetch_array($result);
-    $cname=$arr['cname'];
-    $path="./document/".$cname."/".$_COOKIE['project'];
-    $cnamepro=$cname."@".$_COOKIE['project'];
+    $path="./document/".iconv('utf-8','gb2312',$arr['cname'])."/".iconv('utf-8','gb2312',$_COOKIE['project']);
+    $cnamepro=$arr['cname']."@".$_COOKIE['project'];
     showFolderNoPower($path);
 
     if(isset($_POST['mySubmitd']))
@@ -86,19 +85,19 @@
         $content="上传了文档  ".$_FILES['update']['name'];
         $sql="INSERT INTO `plog`(`project`, ` content`, `time`, `people`) VALUES('".$cnamepro."','".$content."',NOW(),'".$_COOKIE['name']."');";
         mysql_query($sql,$mysql);
-        header("Location:pnavigation.php");
+       header("Location:pnavigation.php");
     }
     if(isset($_GET['folder']))
     {
         if(isset($_GET['foldername']))
-            $newpath=$path."/".$_GET['foldername'];
+            $newpath=$path."/".iconv('utf-8','gb2312',$_GET['foldername']);
         @mkdir($newpath);
         $content="创建了项目内部的文件夹".$_GET['foldername'];
         $sql="INSERT INTO `plog`(`project`, ` content`, `time`, `people`) VALUES('".$cnamepro."','".$content."',NOW(),'".$_COOKIE['name']."');";
         mysql_query($sql,$mysql);
-        $sql="INSERT INTO `folder`(`fname`,`faddress`,`fcnamepro`) VALUES('".$_GET['foldername']."','".$newpath."','".$cnamepro."')";
+        $sql="INSERT INTO `folder`(`fname`,`faddress`,`fcnamepro`) VALUES('".$_GET['foldername']."','".iconv('gb2312','utf-8',$newpath)."','".$cnamepro."')";
         mysql_query($sql,$mysql);
-        header("Location:pnavigation.php");
+      header("Location:pnavigation.php");
     }
     ?>
     <td colspan="7" align="center"><form name='myForm'method='post' enctype='multipart/form-data' >

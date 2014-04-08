@@ -10,22 +10,22 @@
 <table align="left" id="show">
     <thead>
     <tr>
-        <th class="name">文件类型</td>
-        <th class="name">文件名</td>
-        <th class="name">文件大小</td>
-        <th class="name">上传者</td>
-        <th class="name">上传日期</td>
-        <th class="location">文件备注</td>
-        <th class="name">下载</td>
+        <th class="name">文件类型</th>
+        <th class="name">文件名</th>
+        <th class="name">文件大小</th>
+        <th class="name">上传者</th>
+        <th class="name">上传日期</th>
+        <th class="location">文件备注</th>
+        <th class="name">下载</th>
     </tr>
     </thead>
     <tbody>
     <?php
     include("conn.php");
     include("documentFunction.php");
-    $tmparr1=explode("=",$_SERVER['QUERY_STRING']);
+    $tmparr1=explode("=",urldecode($_SERVER['QUERY_STRING']));
     if(@$path=$tmparr1[1]){//文件夹路径
-        showFolderNoPower($path);
+        showFolderNoPower(iconv('utf-8','gb2312',$path));
         $sql1="select * from `folder` where `faddress`='".$path."';";
         $result1=mysql_query($sql1,$mysql);
         $arr=mysql_fetch_array($result1);
@@ -37,7 +37,8 @@
     {
         $tmparr2=$_FILES['update'];
         $discrible=$_POST['myText'];
-        updateFile($path,$tmparr2,$username,$discrible,$cnamepro);
+        updateFile(iconv('utf-8','gb2312',urldecode($path)),$tmparr2,$username,$discrible,$cnamepro);
+        echo '<script>location.reload()</script>';
     }
     ?>
     <tbody>

@@ -7,7 +7,7 @@ $sql="select * from `project` where `pname`='".$pname."';";
 $result=mysql_query($sql,$mysql);
 $arr=mysql_fetch_array($result);
 $tmparr=explode(",",$arr['pstaff']);
-setcookie("project",$pname);
+setcookie("project",urldecode($pname));
 //我把项目管理存在了pstaff的第一个名字中，没设置项目管理人的字段。。。。判断用户是否是项目管理人
 if($_COOKIE['name']==$tmparr[0])
 {

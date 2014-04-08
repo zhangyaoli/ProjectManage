@@ -85,7 +85,7 @@ function printTr($filename,$flag)
 function printTr2($filename,$flag)
 {
     global $mysql;
-    $sql="select * from `document` where `dname`='".$filename."';";
+    $sql="select * from `document` where `dname`='".iconv('gb2312','utf-8',$filename)."';";
     $result=mysql_query($sql,$mysql);
     $arr=mysql_fetch_array($result);
     if($flag==0)
@@ -182,11 +182,12 @@ function showFile($filename,$powerarr,$modify)
     global $mysql;
     if(strstr($filename,".")){//该文件名不是文件夹
         if($filename!="."||$filename!=".."){
+            $filename=iconv('gb2312','utf-8',$filename);
             printTr($filename,$modify);
         }
     }
     else//该文件名是文件夹
-    {
+    { $filename=iconv('gb2312','utf-8',$filename);
         $sql2= "select * from `folder` where `fname` = '".$filename."';";
         $result2=mysql_query($sql2,$mysql);
         $arr2=mysql_fetch_array($result2);
@@ -208,19 +209,19 @@ function showFileNoPower($filename,$flag)
     }
     else//该文件名是文件夹
     {
-        $sql2= "select * from `folder` where `fname` = '".$filename."';";
+        $sql2= "select * from `folder` where `fname` = '".iconv('gb2312','utf-8',$filename)."';";
         $result2=mysql_query($sql2,$mysql);
         $arr2=mysql_fetch_array($result2);
         $address = $arr2['faddress'];
         echo "<tr>".
             "<th class='start'><img src='.\images\ico\\folder.png' width='40' height='40' /></th>".
-            "<td>".$filename."</td>".
-            "<td colspan='5'><a href='showdir.php?path=".$address."'target='_blank'>进入文件夹</a>";
+            "<td>".iconv('gb2312','utf-8',$filename)."</td>".
+            "<td colspan='5'><a href='showdir.php?path=".urldecode($address)."'target='_blank'>进入文件夹</a>";
         if(isset($_COOKIE['projectManager']))
         {
             if($_COOKIE['projectManager']==1)
             {
-                echo "|<a href='deletedir.php?path=".$address."'>删除文件夹</a></td>";
+                echo "|<a href='deletedir.php?path=".urldecode($address)."'>删除文件夹</a></td>";
             }
         }
         echo "</tr>";
@@ -290,12 +291,12 @@ function showFolderNoPower($folder)
 function updateFile($folder,$arrFile,$username,$discribe,$cnamepro)
 {
     global $mysql;
-    $path=$folder."/".$arrFile['name'];
+    $path=$folder."/".iconv('utf-8','gb2312',$arrFile['name']);
     if($arrFile['error']==0)
     {
-        move_uploaded_file($arrFile['tmp_name'],$path);
+        move_uploaded_file(iconv('utf-8','gb2312',$arrFile['tmp_name']),$path);
         $sql="insert into `document`(`dname`,`daddress`,`dspace`,`dupdateuser`,`dtime`,`ddiscribe`,`dtype`,`cnamepro`)values('".$arrFile['name'].
-            "','".$path."','".$arrFile['size']."','".$username."',NOW(),'".$discribe."','".$arrFile['type']."','".$cnamepro."');";
+            "','".iconv('gb2312','utf-8',$path)."','".$arrFile['size']."','".$username."',NOW(),'".$discribe."','".$arrFile['type']."','".$cnamepro."');";
         $result=mysql_query($sql,$mysql);
     }
 }
@@ -355,14 +356,12 @@ function searchFile($name,$type,$uptime,$upuser,$discrible,$fileArray)
         $sql.=" `ddiscribe` like '%".$discrible."%'";
         $flag=1;
     }
-    echo $sql;
-    $result=mysql_query($sql,$mysql);
+    $result=mysql_query($sql);
     if(!$result){echo "没有找到符合要求的文件....";}
     else{
         while($arr=mysql_fetch_array($result))
         {
-            $flag=0;
-            if(in_array($arr['dname'],$fileArray))
+            if(in_array(iconv('utf-8','gb2312',$arr['dname']),$fileArray))
             {
                 showFileNoPower1($arr['dname'],0);
                 $flag++;
