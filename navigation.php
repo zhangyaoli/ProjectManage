@@ -70,7 +70,7 @@ function showRecNum($rec)
             echo "<li><a href='logP.php' title='日志'>日志</a></li>";
             echo "<li><a href='projectCreate.php' title='新建项目'>新建项目</a></li>";
             echo "<li><a href='setpeople.php' title='人员设置'>人员设置</a></li>";
-
+            echo "<li><a href='cooperation.php' title='协作管理'>协作管理</a></li>";
         }
         ?>
         <li><a href="exit.php" title="退出">退出</a></li>

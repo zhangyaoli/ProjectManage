@@ -13,19 +13,14 @@ function projectStatus($stime, $etime, $speed)
         return "项目失败";
     }
 }
-
-function Progress($p)
-{
-    return -$p * $p + 2 * $p; //抛物线 y=-(x-1)^2+1
+function Progress($p){
+    return -$p*$p+2*$p;//抛物线 y=-(x-1)^2+1
 }
-
-function SetTdTag($tlevel, $level)
-{
-    for ($i = $level; $i < $tlevel; $i++) {
+function SetTdTag($tlevel,$level){
+    for($i=$level;$i<$tlevel;$i++){
         echo '</td><td>';
     }
 }
-
 ?>
 <!DOCTYPE>
 <html>
@@ -78,19 +73,18 @@ function SetTdTag($tlevel, $level)
             overflow-y: auto;
             border: 0;
         }
-
         table.tab_data {
             width: 100%;
             border-collapse: collapse;
         }
 
-        .tab_data th {
+       .tab_data th {
             background: skyblue;
             font-size: 12px;
             font-weight: 100;
             height: 28px;
             text-align: left;
-            width: 20%;
+           width:20%;
         }
 
         .tab_data tr td {
@@ -99,11 +93,9 @@ function SetTdTag($tlevel, $level)
             color: #333;
             text-align: left;
         }
-
-        .tab_data tr td div {
+        .tab_data tr td div{
             padding: 3px;
         }
-
         -->
     </style>
 
@@ -125,8 +117,8 @@ function SetTdTag($tlevel, $level)
         //查找所属项目，并列出,判断是否为管理员等到进入项目之后在判断
         while ($arr = mysql_fetch_array($result)) {
             if (stristr($arr['pstaff'], $_COOKIE['name'])) {
-                $threadSql = "select * from `thread` where `tcnamepro`='" . $arr['cname'] . "@" . $arr['pname'] . "'order by tlevel";
-                $threadResult = mysql_query($threadSql);
+                $threadSql="select * from `thread` where `tcnamepro`='".$arr['cname']."@".$arr['pname']."'";
+                $threadResult=mysql_query($threadSql);
                 ?>
                 <tr>
                     <td width='75%'>
@@ -140,37 +132,31 @@ function SetTdTag($tlevel, $level)
                             </tr>
                             <tr>
                                 <td>
-                                    <?php $level = 1;
-                                    while ($threadArr = mysql_fetch_array($threadResult)) {
-                                        if ($threadArr['tlevel'] != $level) {
-                                            SetTdTag($threadArr['tlevel'], $level);
-                                            $level = $threadArr['tlevel'];
-                                        } ?>
-                                        <div><?php echo $threadArr['tname'] ?></div>
-                                        <div
-                                            style="background-color:<?php if ($threadArr['tflag'] == 1) echo 'blue'; else echo 'red' ?> ;width:<?php echo Progress($threadArr['tcontribution'] / 100) * 100 ?>%;height:30px "></div>
-                                    <?php } ?>
+                               <?php $level=1;
+                               while($threadArr=mysql_fetch_array($threadResult)){
+                                   if($threadArr['tlevel']!=$level){
+                                       SetTdTag($threadArr['tlevel'],$level);
+                                $level=$threadArr['tlevel']; }?>
+                                <div><?php echo $threadArr['tname']?></div>
+                                    <div style="background-color:<?php if( $threadArr['tflag']==1) echo 'blue';else echo 'red' ?> ;width:<?php echo  Progress($threadArr['tcontribution']/100)*100?>%;height:30px "></div>
+                                <?php }?>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5">
                                     <div style="width: 50%;margin: auto">
-                                        <div style="text-align: center;font-size: 17px">
-                                            项目 <?php if ($arr['pspeed'] > 100) $arr['pspeed'] = 100;
-                                            echo $arr['pname'] . ' 完成度为 ' . $arr['pspeed'] . '%' ?></div>
-                                        <div style="border: 1px solid #000000;height: 25px;padding: 2px;">
-                                            <div
-                                                style="width: <?php echo $arr['pspeed'] ?>%;background-color: #808080;height: 18px"></div>
-                                        </div>
+                                        <div style="text-align: center;font-size: 17px">项目 <?php if($arr['pspeed']>100) $arr['pspeed']=100; echo $arr['pname'].' 完成度为 '.$arr['pspeed'].'%'?></div>
+                                <div style="border: 1px solid #000000;height: 25px;padding: 2px;">
+                                    <div  style="width: <?php echo $arr['pspeed'] ?>%;background-color: #808080;height: 18px"></div>
+                                </div>
                                     </div>
                                 </td>
                             </tr>
                         </table>
                     </td>
                     <td width='25%'><a style="font-size: 20px"
-                                       href="projectShow.php?pname=<?php echo $arr['pname'] ?>"
-                                       target='_blank'>进入<?php echo $arr['pname'] . "项目(" . projectStatus($arr['pstarttime'], $arr['pendtime'], $arr['pspeed']) ?>
-                            )</a></td>
+                            href="projectShow.php?pname=<?php echo $arr['pname']?>" target='_blank'>进入<?php echo $arr['pname'] . "项目(" . projectStatus($arr['pstarttime'], $arr['pendtime'], $arr['pspeed']) ?>
+                        )</a></td>
                 </tr>
             <?php
             }
