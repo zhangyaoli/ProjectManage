@@ -1,3 +1,22 @@
+<?php
+include("conn.php");
+if(isset($_POST['regSubmit']))
+{
+//    var_dump($_POST);
+//    die;
+    $username='admin@'.$_POST['textUserName'];
+    $userpw=$_POST['textUserPW2'];
+    $useremail=$_POST['textEmail'];
+    $usercompany=$_POST['textCompanyName'];
+    $cname=$_POST['textUserName'];
+    $sql="INSERT INTO `user`(`username`,`userpw`,`post`,`power`,`useremail`,`usercompany`,`cname`)values('".$username."','".$userpw."','管理员','0','".$useremail."','".$usercompany."','".$cname."');";
+    mysql_query($sql,$mysql);
+    $dir=iconv('utf-8','gb2312',"./document/".$cname);
+    mkdir($dir,0777);
+    setcookie("name",$username);
+    header("location:project.php");
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,19 +26,7 @@
         function createAjax()
         {
             var ajax;
-            /*if(window.ActiveXObject)
-             {
-             var versions=['Microsoft.XMLHTP','MSXML2.XMLHTTP.6.0','MSXML2.XMLHTTP.5.0','MSXML2.XMLHTTP.4.0','MSXML2.XMLHTTP.3.0','MSXML2.XMLHTTP.2.0','MSXML2.XMLHTTP'];
-             for(var i=0;i<versions.length;i++)    //>不加这个代码要变色 靠
-             {
-             ajax=new ActiveXObject(versions[i]);
-             if(ajax)
-             {
-             return ajax;
-             }
-             }
-             }
-             else*/ if(window.XMLHttpRequest)
+        if(window.XMLHttpRequest)
         {
             ajax=new XMLHttpRequest();
             return ajax;
@@ -134,25 +141,10 @@
     </style>
     <link href="user2/css/bg.css" rel="stylesheet" type="text/css" />
 </head>
-<?php
-include("conn.php");
-if(isset($_POST['regSubmit']))
-{
-    $username='admin@'.$_POST['textUserName'];
-    $userpw=$_POST['textUserPW2'];
-    $useremail=$_POST['textEmail'];
-    $usercompany=$_POST['textCompanyName'];
-    $cname=$_POST['textUserName'];
-    $sql="INSERT INTO `user`(`username`,`userpw`,`post`,`power`,`useremail`,`usercompany`,`cname`)values('".$username."','".$userpw."','管理员','0','".$useremail."','".$usercompany."','".$cname."');";
-    mysql_query($sql,$mysql);
-    $dir="./document/".$cname;
-    mkdir($dir,0777);
-    setcookie("name",$username);
-    header("location:project.php");
-}
-?>
 
 <body>
+
+
 <font color="#FF0000" size="3">注册之后您的登陆账号（公司管理员）为admin+@+公司名，如注册公司为ST,您的登陆账号为admin@ST</font>
 <form name="regForm" method="post" onclick="return submitCheck()">
     <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" >

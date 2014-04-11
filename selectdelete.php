@@ -1,3 +1,8 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
 <?php
 include("conn.php");
 $staff=$_GET['username'];
@@ -12,3 +17,5 @@ else window.location.href="deleteStaff.php?staff='.$staff.'";
 
 </script>';
 ?>
+<body/>
+</html>

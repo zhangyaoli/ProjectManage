@@ -61,7 +61,8 @@ if(isset($_POST['mySubmit']))
 
 ?>
 <html>
-<head><title></title>
+<head>
+    <meta charset="UTF-8"/><title>添加员工</title>
 </head>
 <form  name="myForm" method="POST">
     用户名:<input type="text" name="textname" value=""><span><?php echo "@".$cname;?></span><br>

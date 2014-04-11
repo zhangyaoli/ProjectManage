@@ -3,6 +3,10 @@
 include("conn.php");
 ?>
 <html>
+<head>
+    <meta charset="utf-8"/>
+
+</head>
 <body>
 
 <form name="myForm" method="get">
@@ -29,7 +33,7 @@ include("conn.php");
     while($arr2=mysql_fetch_array($result2))
     {
         $ss=$ss+$arr2['tcontribution'];
-        echo $arr2['tname'].": <input type='text' name='".$arr2['tname']."' value='".$arr2['tcontribution']."'size='3'>";
+       echo  '<br />'. $arr2['tname'].": <input type='text' name='".$arr2['tname']."' value='".$arr2['tcontribution']."'size='3'>";
     }
     echo "<br>";
     echo "目前总贡献度为".$ss;
