@@ -136,7 +136,7 @@ function SetTdTag($tlevel,$level){
                                while($threadArr=mysql_fetch_array($threadResult)){
                                    if($threadArr['tlevel']!=$level){
                                        SetTdTag($threadArr['tlevel'],$level);
-                                $level++; }?>
+                                $level=$threadArr['tlevel']; }?>
                                 <div><?php echo $threadArr['tname']?></div>
                                     <div style="background-color:<?php if( $threadArr['tflag']==1) echo 'blue';else echo 'red' ?> ;width:<?php echo  Progress($threadArr['tcontribution']/100)*100?>%;height:30px "></div>
                                 <?php }?>

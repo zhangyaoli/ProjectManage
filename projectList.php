@@ -2,14 +2,11 @@
 include("conn.php");
 $userSql = "select * from `user`";
 $userSqlResult = mysql_query($userSql);
-$projectSql='select * from project';
+$projectSql='select * from project ';
 $projectSqlResult = mysql_query($projectSql);
 $projects=array();
 while($rows=mysql_fetch_array($projectSqlResult)){
     $projects[]=$rows;
-}
-function findUser($username,$project){
-
 }
 function countProject($username, $sql)
 {
@@ -30,7 +27,7 @@ function countProject($username, $sql)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>协作管理</title>
+    <title>项目列表</title>
     <?php
     include("navigation.php");
     ?>
@@ -101,17 +98,16 @@ function countProject($username, $sql)
             padding: 3px;
         }
         -->
-        .user_list td div{
+        .user_data td{
             border-spacing: 0px 0px;
             color: #333;
             font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
             font-size: 14px;
             line-height: 20px;
             -moz-box-sizing: border-box;
-
             text-align: center;
         }
-        .user_list:nth-child(odd)>td div{
+        .user_data:nth-child(odd)>td{
             background-color:#dff0d8;
         }
         .user_head td{
@@ -130,6 +126,7 @@ function countProject($username, $sql)
         .user_table tr td {
             border: 1px solid #888888;
         }
+
     </style>
     <link href="css/css.css" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
@@ -139,37 +136,42 @@ function countProject($username, $sql)
 <body>
 <table class="user_table">
     <tr class="user_head">
-        <td>人员</td>
-        <td>已完成项目</td>
-        <td>进行中的项目</td>
+        <td>项目</td>
+        <td>完成进度</td>
+        <td>负责人</td>
+        <td>参与人员</td>
+        <td>日期</td>
     </tr>
-    <?php
-    while ($userRows = mysql_fetch_array($userSqlResult)){
-        ?>
         <tr class="user_list">
-          <td><div><?php echo explode('@', $userRows['username'])[0]; ?></div></td>
-            <td><div>
-                    <?php $projectSql = "select * from project where pspeed=100";
-                   if(countProject($userRows['username'], $projectSql)!=0) {
-                 echo  '<a href="projectList.php">';
-                echo countProject($userRows['username'], $projectSql).'</a>';
-                   }else{
-                       echo countProject($userRows['username'], $projectSql);
-                   }?>
-                </div>
-            </td>
-            <td><div>
-             <a href="projectDis.php">
-                <?php
-                $projectSql = "select * from project where pspeed!=100";
-                if(countProject($userRows['username'], $projectSql)!=0) {
-                echo countProject($userRows['username'], $projectSql);
+            <?php
+            if($projects){
+            foreach($projects as $project){ ?>
+         <tr class="user_data">
+        <td><?php echo $project['pname'] ?></td>
+        <td>
+            <?php echo $project['pspeed'] ?>%
+        </td>
+        <td>
+            <?php $projectStaffs=explode(',',$project['pstaff']);
+            echo $projectStaffs[0];
+            ?>
+        </td><td>
+            <?php  foreach($projectStaffs as $projectStaff){
+                if($projectStaff!=$projectStaffs[0]){
+                    echo $projectStaff;
                 }
-                ?>
-             </a></div>
-            </td>
-        </tr>
-    <?php } ?>
-</table>
+            }?>
+        </td>
+        <td>
+            <?php echo $project['pstarttime'] ?> 到 <?php echo $project['pendtime'] ?>
+        </td>
+</tr>
+    <?php }}
+    else {
+    ?>
+    <?php }?>
 
+</table>
 </body>
+
+

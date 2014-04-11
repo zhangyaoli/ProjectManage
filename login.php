@@ -80,7 +80,7 @@ if(isset($_POST['indexSubmit'])){
                         <td><input type="submit" name="indexSubmit"   class="right-button02" value="登陆">
                             <input name="Submit232" type="submit" class="right-button02" value="重 置" /></td>
                     </tr>
-                    <tr><td>没有账号？<a href="register.php">马上注册</a></td>
+                    <tr><td colspan="2">没有账号？<a href="register.php">马上注册</a></td>
                     </tr>
                 </table>  </form></td>
     </tr>
