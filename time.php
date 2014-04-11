@@ -42,7 +42,7 @@ else
         --></style>
 </head>
 <body>
-<form name="form_cal" action="#" method="get">
+<form name="form_cal" action="#" method="get" style="float: left;margin-top: 10px">
     <input type="hidden" name="myHidden" id="myHidden">
     <table border="1" cellpadding="2" cellspacing="0" width="200" align="center">
         <tr bgcolor="#CCEEFF">
@@ -70,4 +70,5 @@ else
                     for($day--;($day+$Week)%7!=0;$day++)
                         echo '<td>&nbsp </td>';
                     ?>
-        </tr></table></form></body></html>
+        </tr></table></form>
+<div style="clear:both"></div></body></html>

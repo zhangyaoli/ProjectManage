@@ -122,8 +122,8 @@
         background-repeat: repeat-x;
     }
     #content{
-        width:750px;
-        height:500px;
+        width:740px;
+        height:200px;
         float:left;
         border-right-width: 1px;
         border-left-width: 1px;

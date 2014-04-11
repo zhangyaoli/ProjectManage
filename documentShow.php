@@ -33,7 +33,7 @@ $result=mysql_query($sql2,$mysql);
                 img0.src = "./css/pic/tabletree-arrow2.gif";
                 img0.alt = "点击收缩";
                 for (index = beginRow; index < len && tbl.rows[index].id != "tr1"; index++) {
-                    tbl.rows[index].style.display = 'block';
+                    tbl.rows[index].style.display = '';
                 }
             } else {
                 img0.src = "./css/pic/tabletree-arrow.gif";
