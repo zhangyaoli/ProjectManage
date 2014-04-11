@@ -53,19 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectTask.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="projectTask.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projectTask.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="73" selection-start="4189" selection-end="4189" vertical-scroll-proportion="-14.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
+            <state line="129" column="73" selection-start="4189" selection-end="4189" vertical-scroll-proportion="0.80933064">
               <folding />
             </state>
           </provider>
@@ -442,16 +433,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projectTask.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="73" selection-start="4189" selection-end="4189" vertical-scroll-proportion="-14.25">
+        <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/projectTask.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
+        <state line="129" column="73" selection-start="4189" selection-end="4189" vertical-scroll-proportion="0.80933064">
           <folding />
         </state>
       </provider>
