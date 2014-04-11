@@ -107,10 +107,24 @@ $arr=mysql_fetch_array($result);//获得该项目信息
                 <select  name="rightBox[]" id="rightBox" multiple="multiple"></select>
             </td>
         </tr>
-<!--        <tr>-->
-<!--            <td>&nbsp;</td>-->
-<!--            <td>所属模块:</td>-->
-<!--        </tr>-->
+        <tr>
+            <td>&nbsp;</td>
+            <td>所属模块:</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <select  name="thread" >
+                    <?php
+                    $threadSql="select * from `thread`where tcnamepro='".getCompany($_COOKIE['name'],$mysql)."@".$_COOKIE['project']."'order by tlevel";
+                    $threadResult=mysql_query($threadSql);
+                    while($threadArr=mysql_fetch_array($threadResult))
+                    {
+                            echo "<option value='".$threadArr['id']."'>".$threadArr['tname']."</option>";
+                    }
+                    ?>
+                </select>
+            </td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
             <td></td>
@@ -128,11 +142,12 @@ if(isset($_GET['submitTask']))
     $r="";
     $content=$_GET['content'];
     $project=$_COOKIE['project']."@".getCompany($_COOKIE['name'],$mysql);
+    $thread_id=$_GET["thread"];
     if(isset($_GET['rightBox'])){
         foreach($_GET['rightBox'] as $value)
         {
             $r.=$value;
-            $sql="INSERT INTO `task` (`receive`, `content`, `time`, `project`,`complete`,`apply`,`recontent`) VALUES ('".$value."','".$content."',NOW(),'".$project."',0,0,'');";
+            $sql="INSERT INTO `task` (`receive`, `content`, `time`, `project`,`complete`,`apply`,`recontent`,`thread_id`) VALUES ('".$value."','".$content."',NOW(),'".$project."',0,0,'',$thread_id);";
             mysql_query($sql,$mysql);
         }
     }

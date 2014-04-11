@@ -1,8 +1,9 @@
 <?php
 include("conn.php");
+$username=$_SERVER['QUERY_STRING'];
 $userSql = "select * from `user`";
 $userSqlResult = mysql_query($userSql);
-$projectSql='select * from project ';
+$projectSql='select * from project where pspeed=100';
 $projectSqlResult = mysql_query($projectSql);
 $projects=array();
 while($rows=mysql_fetch_array($projectSqlResult)){
@@ -147,7 +148,7 @@ function countProject($username, $sql)
             if($projects){
             foreach($projects as $project){ ?>
          <tr class="user_data">
-        <td><?php echo $project['pname'] ?></td>
+        <td><a href="projectDis.php?username=<?php echo $username?>&pname=<?php echo $project['pname'] ?>"><?php echo $project['pname'] ?></a></td>
         <td>
             <?php echo $project['pspeed'] ?>%
         </td>
@@ -156,9 +157,12 @@ function countProject($username, $sql)
             echo $projectStaffs[0];
             ?>
         </td><td>
-            <?php  foreach($projectStaffs as $projectStaff){
+            <?php
+           foreach($projectStaffs as $projectStaff){
                 if($projectStaff!=$projectStaffs[0]){
-                    echo $projectStaff;
+                    $a=explode('@',$projectStaff);
+                    echo $a[0].',';
+
                 }
             }?>
         </td>
@@ -167,8 +171,7 @@ function countProject($username, $sql)
         </td>
 </tr>
     <?php }}
-    else {
-    ?>
+    else {?>
     <?php }?>
 
 </table>

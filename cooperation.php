@@ -140,8 +140,8 @@ function countProject($username, $sql)
 <table class="user_table">
     <tr class="user_head">
         <td>人员</td>
-        <td>已完成项目</td>
-        <td>进行中的项目</td>
+        <td>已完成项目数</td>
+        <td>进行中项目数</td>
     </tr>
     <?php
     while ($userRows = mysql_fetch_array($userSqlResult)){
@@ -151,7 +151,7 @@ function countProject($username, $sql)
             <td><div>
                     <?php $projectSql = "select * from project where pspeed=100";
                    if(countProject($userRows['username'], $projectSql)!=0) {
-                 echo  '<a href="projectList.php">';
+                 echo  '<a href="projectList.php?'.$userRows['username'].'">';
                 echo countProject($userRows['username'], $projectSql).'</a>';
                    }else{
                        echo countProject($userRows['username'], $projectSql);
@@ -159,14 +159,16 @@ function countProject($username, $sql)
                 </div>
             </td>
             <td><div>
-             <a href="projectDis.php">
                 <?php
+                $username=$userRows['username'];
                 $projectSql = "select * from project where pspeed!=100";
                 if(countProject($userRows['username'], $projectSql)!=0) {
-                echo countProject($userRows['username'], $projectSql);
+                echo '<a href=projectDis.php?username='.$username.'>'.countProject($userRows['username'], $projectSql).'</a>';
+                }else{
+                    echo 0;
                 }
                 ?>
-             </a></div>
+            </div>
             </td>
         </tr>
     <?php } ?>
