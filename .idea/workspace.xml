@@ -24,6 +24,7 @@
     <file path="/log.php" changelist="3995c8aa-5806-4bd5-ba8e-bfe3942473ac" time="1397186534893" ignored="false" />
     <file path="/time.php" changelist="3995c8aa-5806-4bd5-ba8e-bfe3942473ac" time="1397185504994" ignored="false" />
     <file path="/projectTalk.php" changelist="3995c8aa-5806-4bd5-ba8e-bfe3942473ac" time="1397187116161" ignored="false" />
+    <file path="/.gitignore" changelist="3995c8aa-5806-4bd5-ba8e-bfe3942473ac" time="1397188186371" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +47,25 @@
       <file leaf-file-name="navigation.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navigation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="78" selection-start="550" selection-end="556" vertical-scroll-proportion="-5.428571">
+            <state line="8" column="78" selection-start="550" selection-end="556" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectTask.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="projectTask.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projectTask.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="10" selection-start="3656" selection-end="3752" vertical-scroll-proportion="2.6963696">
+            <state line="109" column="10" selection-start="3656" selection-end="3752" vertical-scroll-proportion="-0.6785714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,20 +74,8 @@
       <file leaf-file-name="log.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="6" selection-start="5870" selection-end="5870" vertical-scroll-proportion="-6.642857">
-              <folding>
-                <element signature="e#2270#2290#0" expanded="true" />
-                <element signature="tag#div#0;tag#div#0" expanded="false" />
-                <element signature="e#2534#2554#0" expanded="true" />
-                <element signature="tag#div#1;tag#div#0" expanded="false" />
-                <element signature="e#2826#2848#0" expanded="true" />
-                <element signature="e#2933#2955#0" expanded="true" />
-                <element signature="e#3672#3692#0" expanded="true" />
-                <element signature="e#3936#3956#0" expanded="true" />
-                <element signature="e#4228#4250#0" expanded="true" />
-                <element signature="e#4335#4357#0" expanded="true" />
-                <element signature="e#5283#5301#0" expanded="true" />
-              </folding>
+            <state line="177" column="6" selection-start="5870" selection-end="5870" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,7 +83,7 @@
       <file leaf-file-name="projectTalk.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projectTalk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="12" selection-start="3862" selection-end="3864" vertical-scroll-proportion="-30.471699">
+            <state line="136" column="12" selection-start="3862" selection-end="3864" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,10 +92,8 @@
       <file leaf-file-name="pnavigation.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pnavigation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="312" column="63" selection-start="9722" selection-end="9733" vertical-scroll-proportion="-8.142858">
-              <folding>
-                <marker date="1397187298983" expanded="false" signature="5825:5846" placeholder="..." />
-              </folding>
+            <state line="312" column="63" selection-start="9722" selection-end="9733" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,10 +101,8 @@
       <file leaf-file-name="message.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="21" selection-start="3269" selection-end="3305" vertical-scroll-proportion="-7.321429">
-              <folding>
-                <marker date="1397187292721" expanded="false" signature="5774:5795" placeholder="..." />
-              </folding>
+            <state line="125" column="21" selection-start="3269" selection-end="3305" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,10 +110,8 @@
       <file leaf-file-name="document.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/document.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="31" selection-start="1216" selection-end="1228" vertical-scroll-proportion="-5.285714">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="34" column="31" selection-start="1216" selection-end="1228" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,7 +119,7 @@
       <file leaf-file-name="documentShow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/documentShow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="14" selection-start="3923" selection-end="3923" vertical-scroll-proportion="-5.428571">
+            <state line="97" column="14" selection-start="3923" selection-end="3923" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +128,7 @@
       <file leaf-file-name="download.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/download.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.67857">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/documentFunction.php" />
         <option value="$PROJECT_DIR$/showdir.php" />
         <option value="$PROJECT_DIR$/projectCreate.php" />
         <option value="$PROJECT_DIR$/showlog.php" />
@@ -168,6 +159,7 @@
         <option value="$PROJECT_DIR$/message.php" />
         <option value="$PROJECT_DIR$/pnavigation.php" />
         <option value="$PROJECT_DIR$/projectTask.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -260,15 +252,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32590052" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24318182" sideWeight="0.24957265" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2659091" sideWeight="0.6740995" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27045456" sideWeight="0.6740995" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24621212" sideWeight="0.37264958" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -278,6 +269,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32590052" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -358,20 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="24" selection-start="2761" selection-end="2761" vertical-scroll-proportion="-4.071429">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/top03.gif">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -385,16 +363,7 @@
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="34" selection-start="2114" selection-end="2114" vertical-scroll-proportion="-11.5">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -407,100 +376,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/documentShow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="14" selection-start="3923" selection-end="3923" vertical-scroll-proportion="-5.428571">
+        <state line="97" column="14" selection-start="3923" selection-end="3923" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/download.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.67857">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/document.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="1216" selection-end="1228" vertical-scroll-proportion="-5.285714">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="34" column="31" selection-start="1216" selection-end="1228" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/time.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="81" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.6480836">
-          <folding>
-            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="44" column="81" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.6480836" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="6" selection-start="5870" selection-end="5870" vertical-scroll-proportion="-6.642857">
-          <folding>
-            <element signature="e#2270#2290#0" expanded="true" />
-            <element signature="tag#div#0;tag#div#0" expanded="false" />
-            <element signature="e#2534#2554#0" expanded="true" />
-            <element signature="tag#div#1;tag#div#0" expanded="false" />
-            <element signature="e#2826#2848#0" expanded="true" />
-            <element signature="e#2933#2955#0" expanded="true" />
-            <element signature="e#3672#3692#0" expanded="true" />
-            <element signature="e#3936#3956#0" expanded="true" />
-            <element signature="e#4228#4250#0" expanded="true" />
-            <element signature="e#4335#4357#0" expanded="true" />
-            <element signature="e#5283#5301#0" expanded="true" />
-          </folding>
+        <state line="177" column="6" selection-start="5870" selection-end="5870" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projectTalk.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="12" selection-start="3862" selection-end="3864" vertical-scroll-proportion="-30.471699">
+        <state line="136" column="12" selection-start="3862" selection-end="3864" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="21" selection-start="3269" selection-end="3305" vertical-scroll-proportion="-7.321429">
-          <folding>
-            <marker date="1397187292721" expanded="false" signature="5774:5795" placeholder="..." />
-          </folding>
+        <state line="125" column="21" selection-start="3269" selection-end="3305" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/documentSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="7" selection-start="4278" selection-end="4278" vertical-scroll-proportion="0.9683544">
-          <folding>
-            <element signature="tag#form#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="78" selection-start="550" selection-end="556" vertical-scroll-proportion="-5.428571">
+        <state line="8" column="78" selection-start="550" selection-end="556" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pnavigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="63" selection-start="9722" selection-end="9733" vertical-scroll-proportion="-8.142858">
-          <folding>
-            <marker date="1397187298983" expanded="false" signature="5825:5846" placeholder="..." />
-          </folding>
+        <state line="312" column="63" selection-start="9722" selection-end="9733" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projectTask.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="10" selection-start="3656" selection-end="3752" vertical-scroll-proportion="2.6963696">
+        <state line="109" column="10" selection-start="3656" selection-end="3752" vertical-scroll-proportion="-0.6785714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
