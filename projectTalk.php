@@ -127,7 +127,7 @@ if(isset($_GET['submitTalk']))
     <table  border="0" align="center">
         <tr>
             <td  align="center">  发表内容：
-                <input type="text" name="text" value="标题" /></td>
+                <input type="text" name="text"placeholder="请输入标题" /></td>
         </tr>
         <tr>
             <td align="center"><input  type="text" name="content" id="content" ></td>

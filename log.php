@@ -19,8 +19,10 @@ function showFileNoPower($filename,$name)
             $sql="select * from `logfile` where `lfilename`='".$filename."' and `luser`='".$name."' and `ltime`='".$today."';";
             $result=mysql_query($sql,$mysql);
             $arr=mysql_fetch_array($result);
+            if($arr){
             echo $arr['lfilename']." ".$arr['ltime'];
             echo " <a href='download.php?fileDir=".$arr['lfileway']."'>下载</a>"."<br>";
+            }
         }
     }
     else//该文件名是文件夹
@@ -70,6 +72,7 @@ $result=mysql_query($sql,$mysql);
 $arr=mysql_fetch_array($result);
 ?>
 <div id="jh">工作计划:
+    <?php  if(strtotime($day)-strtotime($today)==0){?>
     <div id="addjh" style="display:none">
         <form name="form1" method="post">
             添加
@@ -87,8 +90,8 @@ $arr=mysql_fetch_array($result);
     <div id="m10" style="display:'none'"><a href='#' onClick="javascript:showDiv('addjh');">添加计划</a></div>
     <div id="m11" style="display:'none'"><a href='#' onClick="javascript:showDiv('mjh');">修改计划</a></div>
     <?php
-    if(strtotime($day)-strtotime($today)==0)
-    {
+//    if(strtotime($day)-strtotime($today)==0)
+//    {
         if($arr)
         {
             echo $arr['ljh'];
@@ -100,7 +103,7 @@ $arr=mysql_fetch_array($result);
         }
     }else if(strtotime($day)-strtotime($today)>0)
     {
-        echo "过去的日志不能修改"."<br>";
+       // echo "过去的日志不能修改"."<br>";
         if($arr)
         {
             echo $arr['ljh'];
@@ -112,7 +115,7 @@ $arr=mysql_fetch_array($result);
     ?>
 
 </div>
-<div id="jl">工作记录:
+<div id="jl">工作记录: <?php  if(strtotime($day)-strtotime($today)==0){?>
     <div id="addjl" style="display:none">
         <form name="form2" method="post">
             添加
@@ -129,7 +132,7 @@ $arr=mysql_fetch_array($result);
     </div>
     <div id="m20" style="display:'none'"><a href='#' onClick="javascript:showDiv('addjl');">添加记录</a></div>
     <div id="m21" style="display:'none'"><a href='#' onClick="javascript:showDiv('mjl');">修改记录</a></div>
-    <?php
+    <?php }
     $sql="select * from `log` where `luser`='".$_COOKIE['name']."' and `ltime`='".$today."';";
     $result2=mysql_query($sql,$mysql);
     $arr2=mysql_fetch_array($result2);
@@ -145,7 +148,7 @@ $arr=mysql_fetch_array($result);
         }
     }else if(strtotime($day)-strtotime($today)>0)
     {
-        echo "过去的日志不能修改"."<br>";
+    //    echo "过去的日志不能修改"."<br>";
         if($arr2['ljl']!='')
         {
             echo $arr['ljl'];
@@ -156,26 +159,23 @@ $arr=mysql_fetch_array($result);
     }
     ?>
 </div>
-<div id="fj">上传附件:
+<div id="fj"><?php  $path="./logfile"; if(strtotime($day)-strtotime($today)==0){?>上传附件:
     <div id="upfile" style="display:''"><form name="form3" method="post" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="submit" name="mySubmit3" value="上传"/>
         </form></div>
     <?php
-    $path="./logfile";
-    if(strtotime($day)-strtotime($today)==0)
-    {
         echo "<script> showDiv('upfile');</script>";
         showFolderNoPower($path,$_COOKIE['name']);
     }
     else if(strtotime($day)-strtotime($today)>0)
     {
         echo "<script> hidDiv('upfile');</script>";
-        echo "过去的日志不能修改"."<br>";
+      //  echo "过去的日志不能修改"."<br>";
         showFolderNoPower($path,$_COOKIE['name']);
     }else if(strtotime($day)-strtotime($today)<0)
     {
-        echo "到了再说";
+    //    echo "到了再说";
         echo "<script> hidDiv('upfile');</script>";
     }
 

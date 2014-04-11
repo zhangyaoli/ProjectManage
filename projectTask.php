@@ -107,10 +107,10 @@ $arr=mysql_fetch_array($result);//获得该项目信息
                 <select  name="rightBox[]" id="rightBox" multiple="multiple"></select>
             </td>
         </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>所属模块:</td>
-        </tr>
+<!--        <tr>-->
+<!--            <td>&nbsp;</td>-->
+<!--            <td>所属模块:</td>-->
+<!--        </tr>-->
         <tr>
             <td>&nbsp;</td>
             <td></td>
