@@ -45,7 +45,7 @@ if(isset($_POST['regSubmit']))
                 return false;
             }
             var url="checkUserName.php";
-            ajax.open("POST",url,false);//最后一个参数改成true异步发送readyState就一直为1 靠
+            ajax.open("POST",url,false);//最后一个参数改成true异步发送readyState就一直为1
             ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
             var str="username="+username;
             ajax.send(str);
@@ -148,10 +148,10 @@ if(isset($_POST['regSubmit']))
 <font color="#FF0000" size="3">注册之后您的登陆账号（公司管理员）为admin+@+公司名，如注册公司为ST,您的登陆账号为admin@ST</font>
 <form name="regForm" method="post" onclick="return submitCheck()">
     <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" >
-
         <tr>
             <td width="45" valign="top"><img src="images/user2/images/register_03.gif" width="45" height="386" /></td>
-            <td width="623" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <td width="623" valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td><img src="images/user2/images/register_04.gif" width="623" height="135" /></td>
                     </tr>

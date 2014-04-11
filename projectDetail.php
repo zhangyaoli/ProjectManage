@@ -22,7 +22,7 @@ $result=mysql_query($sql,$mysql);
 $arr=mysql_fetch_array($result);
 ?>
 
-<table width="41%"  width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
+<table width="80%"  width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
     <tr>
         <td  >项目名称：<?php echo $arr['pname'];?></td>
     </tr>
@@ -62,7 +62,7 @@ $arr=mysql_fetch_array($result);
             </table></td>
     </tr>
 </table>
-<table width="41%"  width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
+<table width="80%"  width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
     <tr><td colspan="2" bgcolor="#9999CC">已完成模块：</td></tr>
     <?php
     $cnamepro=getCompany($_COOKIE['name'],$mysql)."@".$_COOKIE['project'];
